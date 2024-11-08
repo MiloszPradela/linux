@@ -1,4 +1,4 @@
-package com.kzabinski.demoDockerCompose;
+package com.MiloszPradela.demoDockerCompose;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
