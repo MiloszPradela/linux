@@ -1,4 +1,4 @@
-package com.kzabinski.demoDockerCompose;
+package com.MiloszPradela.demoDockerCompose;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
