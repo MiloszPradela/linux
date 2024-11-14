@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "8080:5173"
+    environment:
+      - VITE_APP_BACKEND_ADDRESS=http://backend:3000/api/data
+    networks:
+      - network
+
+  backend:
+    working_dir: /app
+    build:
+      context: ./backend
+    container_name: backend
+    command: node server.js
+    ports:
+      - "3000:3000"
+    networks:
+      - network
+
+networks:
+  network:

@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+	--grey: #A9A9A9;
+	--light-grey:  #F4F4F4;
+	--black: #262626;
+	--red: #e40016;
+	--grey-dark: #555555;
+	--light-red: #e43940;
+	--white: #fdfdfd;
+}
+#root {
+ width: 100%;
+}
+.main-root {
+  min-height: 80dvh;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #666;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+footer img {
+    width: 200px;
+    vertical-align: middle;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+footer p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+main {
+  min-height: 80dvh;
+}
+footer,
+nav.navbar {
+  height: 10vh;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tworzy elastyczną siatkę */
+  gap: 20px;
+}
+.name-profile {
+  background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+.container-people {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  padding: 20px;
+}
+
+.name-profile {
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  padding: 15px; 
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.2s; 
+}
+
+.name-profile:hover {
+  transform: scale(1.01); 
+}
+
+.button-group {
+  margin-top: 10px;
+}
+
+.btn-primary,
+button {
+	background-color: var(--red) !important;
+	color: var(--white)  !important;
+	border: 1px solid var(--red)  !important;
+	background-image: none !important;
+	transition: background-color 0.5s, color 0.5s, border-color 0.5s !important;
+	text-align: center !important;
+	display: flex !important;
+	font-size: 16px !important;
+	width: fit-content !important;
+	flex-wrap: wrap;
+  text-decoration: none !important;
+	justify-content: center !important;
+	align-content: center !important;
+	align-items: center !important;
+	height: 45px !important;
+	transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+button:hover {
+	background-color: transparent !important;
+	color: var(--red) !important;
+	border: 1px solid var(--red) !important;
+	text-decoration: none !important;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+    align-items: center;
+}
+
+.person-card {
+  width: 100%;
+}
+.app-person-profile-container button {
+  width: 100% !important;
+}
+.app-person-profile-container {
+  display: grid;  
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media only screen and (max-width: 1024px) {
+  .app-person-profile-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .app-person-profile-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.container {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar .container {
+  width: 100%;
+    background: white;
+    z-index: 1;
+    box-shadow: 0px 3px 9px #f4f4f4
+}
+
+label {
+  color: #262626; 
+  font-weight: 700;
+}
+
+.text-primary {
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+ 
+@media only screen and (max-width: 1024px) {
+.text-primary {
+display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+}
+
+.dropdown-menu.show {
+  padding: unset !important;
+}
+button.dropdown-item {
+  width: 100% !important;
+  text-align: left !important;
+  justify-content: left !important;
+}
+
+.dropdown button {
+  width: 150px !important;
+}
+
+.btn.btn-link {
+  border: 1px solid var(--red) !important;
+  background-color: transparent !important;
+  color: var(--red) !important;
+  &:hover {
+    color: white !important;
+    background-color: var(--light-red) !important;
+  }
+}
