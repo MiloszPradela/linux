@@ -1,0 +1,33 @@
+name: Workflow sprawdzający poprawność budowania aplikacji
+
+# Kontroluje, kiedy workflow się uruchomi
+on:
+  # Uruchamia workflow przy pushu lub pull requestach do branchu "feature-update"
+  push:
+    branches: ['feature-update']
+  pull_request:
+    branches: ['feature-update']
+
+  # Umożliwia ręczne uruchomienie tego workflow z karty Actions
+  workflow_dispatch:
+
+# Workflow składa się z jednego lub więcej zadań, które mogą być wykonywane sekwencyjnie lub równolegle
+jobs:
+  # To workflow zawiera jedno zadanie o nazwie "build"
+  build:
+    # Typ runnera, na którym uruchomi się zadanie
+    runs-on: ubuntu-latest
+
+    # Kroki reprezentują sekwencję zadań, które zostaną wykonane w ramach zadania
+    steps:
+      # Sprawdza repozytorium w $GITHUB_WORKSPACE, aby zadanie miało do niego dostęp
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Instalacja zależności
+      - name: Install dependencies
+        run: npm install
+
+      # Budowanie aplikacji React
+      - name: Build React app
+        run: npm run build
