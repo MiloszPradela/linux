@@ -3,9 +3,11 @@ name: Docker Build Validation
 on:
   push:
     branches:
+      - main
       - feature-update
   pull_request:
     branches:
+      - main
       - feature-update
 
 jobs:
