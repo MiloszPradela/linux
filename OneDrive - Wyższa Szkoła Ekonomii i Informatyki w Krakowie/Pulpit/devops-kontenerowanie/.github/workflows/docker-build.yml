@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - feature-update
+
   pull_request:
     branches:
       - main
       - feature-update
+
 
 jobs:
   docker-build:
@@ -33,6 +35,3 @@ jobs:
       - name: Push Docker image (optional)
         if: success()
         run: docker push ghcr.io/${{ github.repository }}/image-docker
-
-      - name: Clean up Docker images
-        run: docker rmi ghcr.io/${{ github.repository }}/image-docker || true
