@@ -31,13 +31,6 @@ fs.readFile('src/lab01/data.txt','utf8',(err,data) => {
   }
 
   let content = shuffle([...groupedData]);
-  // for (const data in groupedData) {
-  //   content.push(groupedData[~~((Math.random() * groupedData.length) / 1)]);
-  // }
-  //console.log(groupedData);
-  //console.log(content);
-
-
 
   fs.writeFile('src/lab01/module-data.js', "export const data = " + JSON.stringify(content, null, 2), (err) => {
     if (err) {
