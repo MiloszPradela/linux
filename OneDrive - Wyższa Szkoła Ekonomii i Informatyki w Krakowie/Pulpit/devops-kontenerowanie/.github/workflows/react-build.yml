@@ -1,0 +1,43 @@
+name: React Build
+
+on:
+  push:
+    branches:
+      - main
+      - feature-update
+  pull_request:
+    branches:
+      - main
+      - feature-update
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # Zmień na wersję Node.js, której potrzebuje Twój projekt
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the React application
+        run: npm run build
+
+      - name: Upload build artifacts (opcjonalnie)
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build/
+
+      - name: Deploy to GitHub Pages (opcjonalnie)
+        if: github.ref == 'refs/heads/main' # Uruchamia publikację tylko na branchu main
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
